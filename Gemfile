@@ -30,6 +30,12 @@ source "https://rubygems.pkg.github.com/cmdbrew" do
   gem "adminterface", "0.1.0.rc1210406835"
 end
 
+gem "country_select"
+
+# Use Factory to create fake data
+gem "faker"
+gem "factory_bot_rails"
+
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.4.4", require: false
 
