@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.0.1"
 
+# Use dotenv to manage environment variables
+gem 'dotenv-rails', groups: %i[development test], require: 'dotenv/rails-now'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem "rails", "~> 6.1.4", ">= 6.1.4.1"
 # Use postgresql as the database for Active Record
@@ -39,6 +42,11 @@ gem "factory_bot_rails"
 # Decorator
 gem "draper"
 
+# Uploader
+gem "aws-sdk-s3", require: false
+gem "image_processing", "~> 1.2"
+gem "streamio-ffmpeg"
+
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.4.4", require: false
 
@@ -59,14 +67,31 @@ group :development do
   gem "listen", "~> 3.3"
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem "spring"
+  # Find unused I18n keys
+  gem "i18n-tasks"
 end
 
 group :test do
-  # Adds support for Capybara system testing and selenium driver
+  # Validation
+  gem "shoulda-matchers", "~> 3.0", require: false
+  # Use RSpec as Testing Framework
+  gem "rails-controller-testing"
+  gem "rspec-rails"
+  # Retry random failed tests
+  gem "rspec-retry"
+  # Browser testing
   gem "capybara", ">= 3.26"
-  gem "selenium-webdriver"
-  # Easy installation and use of web drivers to run system tests with browsers
   gem "webdrivers"
+  gem "database_cleaner", "~> 1.6.2"
+  # Spec Converage
+  gem "simplecov", require: false
+  gem "simplecov-console", require: false
+  gem "simplecov-small-badge", require: false
+  # API Tests
+  gem "webmock"
+  gem "vcr"
+  # Session Access
+  gem "rack_session_access"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

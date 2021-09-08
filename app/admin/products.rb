@@ -5,29 +5,25 @@ ActiveAdmin.register Product do
   decorate_with Admin::ProductDecorator
 
   scope :all, default: true, show_count: false
-  scope :available do |products|
-    products.where("available_on < ?", Date.today)
-  end
-  scope :drafts do |products|
-    products.where("available_on > ?", Date.today)
-  end
-  scope :featured do |products|
-    products.where(featured: true)
-  end
+  scope :available
+  scope :drafts
+  scope :featured
 
   form html: {multipart: true} do |f|
-    f.inputs do
-      f.semantic_errors
+    panel do
+      f.inputs do
+        f.semantic_errors
 
-      f.input :featured, as: :switch
-      f.input :title
-      f.input :description
-      f.input :author
-      f.input :price
-      f.input :available_on, as: :date_picker
-      f.input :image, as: :file
+        f.input :featured, as: :switch
+        f.input :title
+        f.input :description
+        f.input :author
+        f.input :price
+        f.input :available_on, as: :date_picker
+        f.input :image, as: :file
 
-      f.actions
+        f.actions
+      end
     end
   end
 
@@ -43,7 +39,7 @@ ActiveAdmin.register Product do
       a truncate(product.title), href: admin_product_path(product)
     end
     column :created_at
-    actions(dropdown: true)
+    actions
   end
 
   index as: :grid do |product|

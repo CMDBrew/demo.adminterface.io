@@ -31,15 +31,14 @@ ActiveAdmin.register Order do
         status_tag(order.state, class: "badge alert-warning")
       end
     end
-    column(:user, sortable: :user_id)
+    column(:user, sortable: :user_id) { |u| u.user_avatar_with_name }
     column(:total_price) { |order| number_to_currency order.total_price }
-    actions(dropdown: true)
   end
 
   show do
     panel t(:details, scope: "active_admin", model: Order.model_name.human) do
       attributes_table_for order.user do
-        row(:user) { auto_link order.user }
+        row(:user) { auto_link order.user, order.user_avatar_with_name }
         row :email
       end
 

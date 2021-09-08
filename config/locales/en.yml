@@ -1,12 +1,5 @@
 ---
 en:
-  date:
-    formats:
-      long: "%Y-%m-%d"
-  time:
-    formats:
-      long: "%Y-%m-%d %I:%M%p"
-
   activerecord:
     attributes:
       order:
@@ -21,3 +14,9 @@ en:
       user_address:
         one: Address
         other: Addresses
+  date:
+    formats:
+      long: "%Y-%m-%d"
+  time:
+    formats:
+      long: "%Y-%m-%d %I:%M%p"

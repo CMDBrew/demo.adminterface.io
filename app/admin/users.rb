@@ -17,10 +17,10 @@ ActiveAdmin.register User do
   index do
     selectable_column
     id_column
-    column :name
+    column(:name) { |u| u.avatar_with_name }
     column :email
     column :created_at
-    actions(dropdown: true)
+    actions
   end
 
   show do
@@ -28,7 +28,7 @@ ActiveAdmin.register User do
       tab :profile do
         panel t(:info, scope: "admin.users.panels") do
           attributes_table_for resource do
-            row :name
+            row(:name) { |u| u.avatar_with_name }
             row :email
             row :biography
             row :created_at
