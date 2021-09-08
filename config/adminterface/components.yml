@@ -1,4 +1,7 @@
 ---
+action_items:
+  new:
+    icon_class: bi-plus
 header:
   css_class:
     top: navbar-dark bg-primary navbar-expand-lg

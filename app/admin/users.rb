@@ -3,6 +3,8 @@ ActiveAdmin.register User do
   config.per_page = [10, 30]
   config.comments_per_page = 5
 
+  decorate_with Admin::UserDecorator
+
   permit_params :name, :email, :biography,
     user_addresses_attributes: %i[
       id fullname address_line1 address_line2 city state zip_code country
@@ -24,7 +26,7 @@ ActiveAdmin.register User do
   show do
     tabs http: true, id: "user-tabs" do
       tab :profile do
-        panel "Info" do
+        panel t(:info, scope: "admin.users.panels") do
           attributes_table_for resource do
             row :name
             row :email
@@ -33,21 +35,21 @@ ActiveAdmin.register User do
           end
         end
 
-        panel "Addresses" do
+        panel UserAddress.model_name.human(count: 2) do
           header_action do
             div class: "btn-group" do
               safe_join [
-                link_to("New Address", new_admin_user_user_address_path(user), class: "btn btn-sm btn-link")
+                link_to(t(:new_model, scope: "active_admin", model: UserAddress.model_name.human), new_admin_user_user_address_path(user), class: "btn btn-sm btn-link")
               ]
             end
           end
 
           div class: "table-responsive" do
             table_for(user.user_addresses) do
-              column("Fullname") do |a|
+              column(:fullname) do |a|
                 link_to a.fullname.to_s, admin_user_user_address_path(user.id, a.id)
               end
-              column("Address") do |a|
+              column(:address) do |a|
                 span a.address_line1.to_s
                 br a.address_line2.to_s
               end
@@ -61,18 +63,16 @@ ActiveAdmin.register User do
       end
 
       tab :orders do
-        columns do
+        columns(class: "mb-3 g-3") do
           column(span: 6) do
-            panel class: "bg-light" do
-              small "Total Orders"
-              h1 resource.orders.complete.count
+            panel t(:total_orders, scope: "admin.users.panels"), class: "mb-0" do
+              h3 resource.orders.completed.count
             end
           end
 
           column(span: 6) do
-            panel class: "bg-light" do
-              small "Total Value"
-              h1 number_to_currency resource.orders.complete.sum(:total_price)
+            panel t(:total_price, scope: "admin.users.panels"), class: "mb-0" do
+              h3 number_to_currency resource.orders.completed.sum(:total_price)
             end
           end
         end
@@ -81,14 +81,14 @@ ActiveAdmin.register User do
           div class: "table-responsive" do
             paginated_collection(user.orders.page(params[:page]).per(10), download_links: false) do
               table_for(collection) do
-                column("Order", sortable: :id) do |order|
+                column(:id, sortable: :id) do |order|
                   link_to "##{order.id}", admin_order_path(order)
                 end
-                column("State") { |order| status_tag(order.state) }
-                column("Date", sortable: :checked_out_at) do |order|
+                column(:state) { |order| status_tag(order.state) }
+                column(:checked_out_at, sortable: :checked_out_at) do |order|
                   pretty_format(order.checked_out_at)
                 end
-                column("Total") { |order| number_to_currency order.total_price }
+                column(:total_price) { |order| number_to_currency order.total_price }
               end
             end
           end

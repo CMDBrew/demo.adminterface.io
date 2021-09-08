@@ -3,14 +3,14 @@ class Order < ApplicationRecord
   has_many :line_items, dependent: :destroy
 
   scope :in_progress, -> { where("orders.checked_out_at IS NULL") }
-  scope :complete, -> { where("orders.checked_out_at IS NOT NULL") }
+  scope :completed, -> { where("orders.checked_out_at IS NOT NULL") }
 
-  COMPLETE = "complete"
+  COMPLETE = "completed"
   IN_PROGRESS = "in_progress"
 
   def self.find_with_product(product)
     return [] unless product
-    complete.joins(:line_items)
+    completed.joins(:line_items)
       .where(["line_items.product_id = ?", product.id])
       .order("orders.checked_out_at DESC")
   end

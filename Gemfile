@@ -36,6 +36,9 @@ gem "country_select"
 gem "faker"
 gem "factory_bot_rails"
 
+# Decorator
+gem "draper"
+
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.4.4", require: false
 

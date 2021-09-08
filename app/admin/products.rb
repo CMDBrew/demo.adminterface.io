@@ -2,7 +2,9 @@ ActiveAdmin.register Product do
   menu priority: 2
   permit_params :title, :description, :author, :price, :featured, :available_on, :image_file_name, :image
 
-  scope :all, default: true
+  decorate_with Admin::ProductDecorator
+
+  scope :all, default: true, show_count: false
   scope :available do |products|
     products.where("available_on < ?", Date.today)
   end
@@ -55,18 +57,16 @@ ActiveAdmin.register Product do
   end
 
   show title: :title do |resource|
-    columns do
+    columns(class: "mb-3 g-3") do
       column(span: 6) do
-        panel class: "bg-light" do
-          small "Total Sold"
-          h1 Order.find_with_product(resource).count
+        panel t(:total_orders, scope: "admin.products.panels"), class: "mb-0" do
+          h3 Order.find_with_product(resource).count
         end
       end
 
       column(span: 6) do
-        panel class: "bg-light" do
-          small "Dollar Value"
-          h1 number_to_currency LineItem.where(product_id: resource.id).sum(:price)
+        panel t(:total_price, scope: "admin.products.panels"), class: "mb-0" do
+          h3 number_to_currency LineItem.where(product_id: resource.id).sum(:price)
         end
       end
     end
@@ -82,7 +82,7 @@ ActiveAdmin.register Product do
       row :updated_at
     end
 
-    panel "Recent Orders", body_html: {class: "p-0"} do
+    panel t(:recent_orders, scope: "admin.products.panels"), body_html: {class: "p-0"} do
       div class: "list-group list-group-flush" do
         Order.find_with_product(resource).limit(5).each do |order|
           li auto_link(order), class: "list-group-item"

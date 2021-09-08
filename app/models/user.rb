@@ -5,5 +5,10 @@ class User < ApplicationRecord
 
   accepts_nested_attributes_for :user_addresses, reject_if: :all_blank, allow_destroy: true
 
-  validates :name, :email, presence: true
+  validates :name, presence: true
+  validates :email, email_format: true, uniqueness: { case_sensitive: false }, presence: true
+
+  def avatar(size: 64)
+    "https://source.boringavatars.com/beam/#{size}/#{name}"
+  end
 end

@@ -1,0 +1,5 @@
+---
+en:
+  active_admin:
+    dropdown_actions:
+      button_label: ""
