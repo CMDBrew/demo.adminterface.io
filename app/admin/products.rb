@@ -9,7 +9,7 @@ ActiveAdmin.register Product do
   scope :drafts do |products|
     products.where("available_on > ?", Date.today)
   end
-  scope :featured_products do |products|
+  scope :featured do |products|
     products.where(featured: true)
   end
 
@@ -29,6 +29,21 @@ ActiveAdmin.register Product do
     end
   end
 
+  preserve_default_filters!
+  remove_filter :image_attachment
+  remove_filter :image_blob
+  remove_filter :image_file_name
+
+  index do
+    selectable_column
+    column :title do |product|
+      text_node static_or_uploaded_image_tag(product, [32, 32], width: 32, height: 32)
+      a truncate(product.title), href: admin_product_path(product)
+    end
+    column :created_at
+    actions(dropdown: true)
+  end
+
   index as: :grid do |product|
     div do
       resource_selection_cell product
@@ -39,18 +54,40 @@ ActiveAdmin.register Product do
     a truncate(product.title), href: admin_product_path(product)
   end
 
-  show title: :title
+  show title: :title do |resource|
+    columns do
+      column(span: 6) do
+        panel class: "bg-light" do
+          small "Total Sold"
+          h1 Order.find_with_product(resource).count
+        end
+      end
 
-  sidebar :product_stats, only: :show do
-    attributes_table_for resource do
-      row("Total Sold") { Order.find_with_product(resource).count }
-      row("Dollar Value") { number_to_currency LineItem.where(product_id: resource.id).sum(:price) }
+      column(span: 6) do
+        panel class: "bg-light" do
+          small "Dollar Value"
+          h1 number_to_currency LineItem.where(product_id: resource.id).sum(:price)
+        end
+      end
     end
-  end
 
-  sidebar :recent_orders, only: :show do
-    Order.find_with_product(resource).limit(5).collect do |order|
-      auto_link(order)
-    end.join(content_tag("br")).html_safe
+    attributes_table do
+      row :featured
+      row :available_on
+      row :title
+      row :author
+      row(:price) { |u| number_to_currency u.price }
+      row :description
+      row :created_at
+      row :updated_at
+    end
+
+    panel "Recent Orders", body_html: {class: "p-0"} do
+      div class: "list-group list-group-flush" do
+        Order.find_with_product(resource).limit(5).each do |order|
+          li auto_link(order), class: "list-group-item"
+        end
+      end
+    end
   end
 end
