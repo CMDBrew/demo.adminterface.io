@@ -7,7 +7,7 @@ on:
     branches:
       - master
 env:
-  ruby: 3.0
+  ruby: 3.0.1
   node: 14.x
 jobs:
   standardrb:
