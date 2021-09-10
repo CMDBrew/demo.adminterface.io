@@ -2,8 +2,7 @@ ActiveAdmin.register UserAddress do
   belongs_to :user
   decorate_with Admin::UserAddressDecorator
 
-  permit_params :fullname, :address_line1, :address_line2, :city, :state, :zip_code, :country
-
+  # Index
   preserve_default_filters!
   remove_filter :user
   filter :country, as: :select, tom_select: true
@@ -20,6 +19,7 @@ ActiveAdmin.register UserAddress do
     actions
   end
 
+  # Show
   show do
     attributes_table do
       row(:user) { |u| auto_link u.user, u.user_avatar_with_name }
@@ -32,7 +32,11 @@ ActiveAdmin.register UserAddress do
     active_admin_comments
   end
 
+  # Form
+  permit_params :fullname, :address_line1, :address_line2, :city, :state, :zip_code, :country
+
   form do |f|
+    f.semantic_errors
     panel do
       f.inputs do
         f.input :fullname

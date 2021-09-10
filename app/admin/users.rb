@@ -1,16 +1,11 @@
 ActiveAdmin.register User do
   menu priority: 4
+  decorate_with Admin::UserDecorator
+
   config.per_page = [10, 30]
   config.comments_per_page = 5
 
-  decorate_with Admin::UserDecorator
-
-  permit_params :name, :email, :biography,
-    user_addresses_attributes: %i[
-      position _destroy id fullname address_line1 address_line2
-      city state zip_code country
-    ]
-
+  # Index
   filter :name
   filter :email
   filter :created_at
@@ -24,6 +19,7 @@ ActiveAdmin.register User do
     actions
   end
 
+  # Show
   show do
     tabs http: true, id: "user-tabs" do
       tab :profile do
@@ -100,7 +96,16 @@ ActiveAdmin.register User do
     active_admin_comments
   end
 
+  # Form
+  permit_params :name, :email, :biography,
+    user_addresses_attributes: %i[
+      position _destroy id fullname address_line1 address_line2
+      city state zip_code country
+    ]
+
   form do |f|
+    f.semantic_errors
+
     panel do
       f.inputs do
         columns do

@@ -1,9 +1,9 @@
 ActiveAdmin.register Order do
   menu priority: 3
   decorate_with Admin::OrderDecorator
-
   actions :index, :show
 
+  # Index
   filter :total_price
   filter :checked_out_at
 
@@ -35,6 +35,7 @@ ActiveAdmin.register Order do
     column(:total_price) { |order| number_to_currency order.total_price }
   end
 
+  # Show
   show do
     panel t(:details, scope: "active_admin", model: Order.model_name.human) do
       attributes_table_for order.user do

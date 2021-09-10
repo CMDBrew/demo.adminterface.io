@@ -1,31 +1,12 @@
 ActiveAdmin.register Product do
   menu priority: 2
-  permit_params :title, :description, :author, :price, :featured, :available_on, :image_file_name, :image
-
   decorate_with Admin::ProductDecorator
 
+  # Index
   scope :all, default: true, show_count: false
   scope :available
   scope :drafts
   scope :featured
-
-  form html: {multipart: true} do |f|
-    panel do
-      f.inputs do
-        f.semantic_errors
-
-        f.input :featured, as: :switch
-        f.input :title
-        f.input :description
-        f.input :author
-        f.input :price
-        f.input :available_on, as: :date_picker
-        f.input :image, as: :file
-
-        f.actions
-      end
-    end
-  end
 
   preserve_default_filters!
   remove_filter :image_attachment
@@ -52,6 +33,7 @@ ActiveAdmin.register Product do
     a truncate(product.title), href: admin_product_path(product)
   end
 
+  # Show
   show title: :title do |resource|
     columns(class: "mb-3 g-3") do
       column(span: 6) do
@@ -83,6 +65,27 @@ ActiveAdmin.register Product do
         Order.find_with_product(resource).limit(5).each do |order|
           li auto_link(order), class: "list-group-item"
         end
+      end
+    end
+  end
+
+  # Form
+  permit_params :title, :description, :author, :price, :featured, :available_on, :image_file_name, :image
+
+  form html: {multipart: true} do |f|
+    f.semantic_errors
+
+    panel do
+      f.inputs do
+        f.input :featured, as: :switch
+        f.input :title
+        f.input :description
+        f.input :author
+        f.input :price
+        f.input :available_on, as: :date_picker
+        f.input :image, as: :file
+
+        f.actions
       end
     end
   end
