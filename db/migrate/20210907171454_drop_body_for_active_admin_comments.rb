@@ -25,4 +25,3 @@ class DropBodyForActiveAdminComments < ActiveRecord::Migration[6.1]
     rename_column :active_admin_comments, :body_backup, :body
   end
 end
-
