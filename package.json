@@ -2,7 +2,7 @@
   "name": "demo-adminterface-io",
   "private": true,
   "dependencies": {
-    "@cmdbrew/adminterface": "0.1.0-rc1210406835",
+    "@cmdbrew/adminterface": "0.1.0-rc1222898087",
     "@rails/actioncable": "^6.0.0",
     "@rails/actiontext": "^6.1.4-1",
     "@rails/activestorage": "^6.0.0",
