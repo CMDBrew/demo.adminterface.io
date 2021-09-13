@@ -1,5 +1,6 @@
 class Product < ApplicationRecord
   has_one_attached :image
+  has_many :line_items, dependent: :nullify
 
   validates :title, :price, :available_on, presence: true
 

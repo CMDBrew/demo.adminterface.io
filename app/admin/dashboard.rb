@@ -1,7 +1,20 @@
 ActiveAdmin.register_page "Dashboard" do
   menu priority: 1
 
+  controller do
+    def index
+      @top_products =
+        Product.order(line_items_count: :desc).limit(10).pluck(:title, :line_items_count)
+          .map { |x| [x[0]&.truncate(50), x[1]] }
+          .to_h.to_json
+    end
+  end
+
   content title: proc { I18n.t("active_admin.dashboard") } do
+    panel t(:title, scope: "admin.dashboard.top_products") do
+      render "admin/dashboard/top_products"
+    end
+
     columns do
       column(span: 6) do
         panel t(:recent_orders, scope: "admin.dashboard") do
