@@ -10,7 +10,7 @@ RSpec.describe "Admin::Product", type: :feature do
       within("#new_product") do
         fill_in("product[title]", with: Faker::Book.title)
         fill_in("product[price]", with: Faker::Number.decimal(l_digits: 2))
-        page.execute_script("flatpickr('#product_available_on', {})._input.value = '#{Time.current.strftime("%Y-%d-%m")}'")
+        page.execute_script("flatpickr('#product_available_on', {})._input.value = '#{Time.current.strftime("%Y-%m-%d")}'")
         click_button("Create Product")
       end
 
