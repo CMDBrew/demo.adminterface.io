@@ -408,7 +408,7 @@ GEM
 GEM
   remote: https://rubygems.pkg.github.com/cmdbrew/
   specs:
-    adminterface (0.1.0.rc1222898087)
+    adminterface (0.1.0.rc1230708722)
       activeadmin (~> 2.9)
       image_processing (~> 1.0)
       rails (>= 6.0)
@@ -419,7 +419,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  adminterface (= 0.1.0.rc1222898087)!
+  adminterface (= 0.1.0.rc1230708722)!
   aws-sdk-s3
   bootsnap (>= 1.4.4)
   byebug
