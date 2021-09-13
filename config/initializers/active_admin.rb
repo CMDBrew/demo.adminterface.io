@@ -236,6 +236,18 @@ ActiveAdmin.setup do |config|
   #       admin.add_logout_button_to_menu menu
   #     end
   #   end
+  config.namespace :admin do |admin|
+    admin.build_menu :utility_navigation do |menu|
+      menu.add priority: 1, label: "Docs",
+        url: "https://cmdbrew.github.io/adminterface/",
+        html_options: {target: :blank, rel: "noopener noreferrer"}
+
+      menu.add priority: 2, label: "Github",
+        icon: "bi-github", url: "https://github.com/CMDBrew/adminterface",
+        html_options: {target: :blank, rel: "noopener noreferrer"}
+    end
+  end
+
   #
   # If you wanted to add a static menu item to the default menu provided:
   #
