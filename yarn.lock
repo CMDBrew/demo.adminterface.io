@@ -880,15 +880,15 @@
     "@babel/helper-validator-identifier" "^7.14.9"
     to-fast-properties "^2.0.0"
 
-"@cmdbrew/adminterface@0.1.0-rc1230708722":
-  version "0.1.0-rc1230708722"
-  resolved "https://npm.pkg.github.com/download/@cmdbrew/adminterface/0.1.0-rc1230708722/4bb8575f267fec7b37a2192620fed463334fdc55a79dda38c0e5cbb9ece6a155#3553983f8a3ad44b111335b0559fa946568b7dd2"
-  integrity sha512-f6b/8H0ZKp4/xO/78cMIR81Eu+A4Q8rVTAULwk27+3ucUhTWlE4T1FU1vZTgGD7O0AF3Jq0E9iFQhFp5etbNyg==
+"@cmdbrew/adminterface@0.1.0-rc1255857620":
+  version "0.1.0-rc1255857620"
+  resolved "https://npm.pkg.github.com/download/@cmdbrew/adminterface/0.1.0-rc1255857620/e7bc32af666067b8ea7daa79fa410323a79ad949df4cfe5312033d4f7551ba9d#d3dc24960056300834ccba3088918a631aa337ab"
+  integrity sha512-zeewNXqLjWJvMvAiqChbjrmhLefukRrDcrFOoKiYR+OT/EAPQL7QRZRWzuuGRLm0nYfh9TmqAfgjlW5u6ZgLsQ==
   dependencies:
-    "@popperjs/core" "^2.9.2"
+    "@popperjs/core" "^2.10.1"
     "@rails/actiontext" "^6.1.4"
     "@rails/ujs" "^6.1.4"
-    bootstrap "^5.0.1"
+    bootstrap "^5.1.1"
     bootstrap-icons "^1.5.0"
     flatpickr "^4.6.9"
     resolve-url-loader "^4.0.0"
@@ -948,7 +948,7 @@
   resolved "https://registry.yarnpkg.com/@orchidjs/sifter/-/sifter-0.8.2.tgz#50f0a4ba8783f2bfbde1bcec9ed97e632940555d"
   integrity sha512-aDemVMJL2cGo82EVHXMM2y6WoWlk00V2aibvNAl2djtZG1OquirMvnOTlb2L4tjcH5cT2q1/dyHepZcxnFW5zQ==
 
-"@popperjs/core@^2.9.2":
+"@popperjs/core@^2.10.1":
   version "2.10.1"
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.10.1.tgz#728ecd95ab207aab8a9a4e421f0422db329232be"
   integrity sha512-HnUhk1Sy9IuKrxEMdIRCxpIqPw6BFsbYSEUO9p/hNw5sMld/+3OLMWQP80F8/db9qsv3qUjs7ZR5bS/R+iinXw==
@@ -1560,7 +1560,7 @@ bootstrap-icons@^1.5.0:
   resolved "https://registry.yarnpkg.com/bootstrap-icons/-/bootstrap-icons-1.5.0.tgz#2cb19da148aa9105cb3174de2963564982d3dc55"
   integrity sha512-44feMc7DE1Ccpsas/1wioN8ewFJNquvi5FewA06wLnqct7CwMdGDVy41ieHaacogzDqLfG8nADIvMNp9e4bfbA==
 
-bootstrap@^5.0.1:
+bootstrap@^5.1.1:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-5.1.1.tgz#9d6eed81e08feaccedf3adaca51fe4b73a2871df"
   integrity sha512-/jUa4sSuDZWlDLQ1gwQQR8uoYSvLJzDd8m5o6bPKh3asLAMYVZKdRCjb1joUd5WXf0WwCNzd2EjwQQhupou0dA==
