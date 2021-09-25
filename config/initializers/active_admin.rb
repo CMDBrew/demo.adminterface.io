@@ -322,7 +322,7 @@ ActiveAdmin.setup do |config|
   # You can add your own content to the site head like analytics. Make sure
   # you only pass content you trust.
   #
-  # config.head = ''.html_safe
+  config.head = '<script defer data-domain="demo.adminterface.io" src="https://plausible.io/js/plausible.js"></script>'.html_safe
 
   # == Footer
   #
