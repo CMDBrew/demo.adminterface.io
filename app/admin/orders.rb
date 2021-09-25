@@ -12,6 +12,7 @@ ActiveAdmin.register Order do
   scope :completed, show_count: false
 
   batch_action :update_status, form: {
+    name: :string,
     checked_out_at: {as: :datetime_picker, label: Order.human_attribute_name(:checked_out_at), input_html: {value: Time.current}}
   } do |ids, inputs|
     Order.where(id: ids).update(checked_out_at: inputs[:checked_out_at])

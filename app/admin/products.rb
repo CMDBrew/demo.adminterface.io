@@ -79,7 +79,7 @@ ActiveAdmin.register Product do
       f.inputs do
         f.input :featured, as: :switch
         f.input :title
-        f.input :description
+        f.input :description, counter: true
         f.input :author
         f.input :price
         f.input :available_on, as: :date_picker

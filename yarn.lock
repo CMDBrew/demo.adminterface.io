@@ -880,21 +880,22 @@
     "@babel/helper-validator-identifier" "^7.14.9"
     to-fast-properties "^2.0.0"
 
-"@cmdbrew/adminterface@0.1.0-rc1230708722":
-  version "0.1.0-rc1230708722"
-  resolved "https://npm.pkg.github.com/download/@cmdbrew/adminterface/0.1.0-rc1230708722/4bb8575f267fec7b37a2192620fed463334fdc55a79dda38c0e5cbb9ece6a155#3553983f8a3ad44b111335b0559fa946568b7dd2"
-  integrity sha512-f6b/8H0ZKp4/xO/78cMIR81Eu+A4Q8rVTAULwk27+3ucUhTWlE4T1FU1vZTgGD7O0AF3Jq0E9iFQhFp5etbNyg==
+"@cmdbrew/adminterface@0.1.0":
+  version "0.1.0"
+  resolved "https://npm.pkg.github.com/download/@cmdbrew/adminterface/0.1.0/6a803f7eefe7eb25f7f840f92e61b456ae3b77c01a231c3ec750c1abe467b92d#3fa617825a0eb0ca28ee89206d342483fd2d3849"
+  integrity sha512-SYtlgy1TbSGzF+qE7fLom5+5OMIzAKuJoRK3gPkHiXMHGJ8KD4uZropA4VkREe4z5NxTvhyQyD58UUjgAukUDQ==
   dependencies:
-    "@popperjs/core" "^2.9.2"
+    "@popperjs/core" "^2.10.1"
     "@rails/actiontext" "^6.1.4"
     "@rails/ujs" "^6.1.4"
-    bootstrap "^5.0.1"
+    bootstrap "^5.1.1"
     bootstrap-icons "^1.5.0"
     flatpickr "^4.6.9"
     resolve-url-loader "^4.0.0"
     sortablejs "^1.14.0"
     tom-select "^1.7.5"
     trix "^1.3.1"
+    uuid "^8.3.2"
 
 "@csstools/convert-colors@^1.4.0":
   version "1.4.0"
@@ -948,7 +949,7 @@
   resolved "https://registry.yarnpkg.com/@orchidjs/sifter/-/sifter-0.8.2.tgz#50f0a4ba8783f2bfbde1bcec9ed97e632940555d"
   integrity sha512-aDemVMJL2cGo82EVHXMM2y6WoWlk00V2aibvNAl2djtZG1OquirMvnOTlb2L4tjcH5cT2q1/dyHepZcxnFW5zQ==
 
-"@popperjs/core@^2.9.2":
+"@popperjs/core@^2.10.1":
   version "2.10.1"
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.10.1.tgz#728ecd95ab207aab8a9a4e421f0422db329232be"
   integrity sha512-HnUhk1Sy9IuKrxEMdIRCxpIqPw6BFsbYSEUO9p/hNw5sMld/+3OLMWQP80F8/db9qsv3qUjs7ZR5bS/R+iinXw==
@@ -1560,7 +1561,7 @@ bootstrap-icons@^1.5.0:
   resolved "https://registry.yarnpkg.com/bootstrap-icons/-/bootstrap-icons-1.5.0.tgz#2cb19da148aa9105cb3174de2963564982d3dc55"
   integrity sha512-44feMc7DE1Ccpsas/1wioN8ewFJNquvi5FewA06wLnqct7CwMdGDVy41ieHaacogzDqLfG8nADIvMNp9e4bfbA==
 
-bootstrap@^5.0.1:
+bootstrap@^5.1.1:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-5.1.1.tgz#9d6eed81e08feaccedf3adaca51fe4b73a2871df"
   integrity sha512-/jUa4sSuDZWlDLQ1gwQQR8uoYSvLJzDd8m5o6bPKh3asLAMYVZKdRCjb1joUd5WXf0WwCNzd2EjwQQhupou0dA==
@@ -6856,6 +6857,11 @@ uuid@^3.4.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
   integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
+
+uuid@^8.3.2:
+  version "8.3.2"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
+  integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
 
 v8-compile-cache@^2.1.1:
   version "2.3.0"
