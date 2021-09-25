@@ -880,10 +880,10 @@
     "@babel/helper-validator-identifier" "^7.14.9"
     to-fast-properties "^2.0.0"
 
-"@cmdbrew/adminterface@0.1.0-rc1255857620":
-  version "0.1.0-rc1255857620"
-  resolved "https://npm.pkg.github.com/download/@cmdbrew/adminterface/0.1.0-rc1255857620/e7bc32af666067b8ea7daa79fa410323a79ad949df4cfe5312033d4f7551ba9d#d3dc24960056300834ccba3088918a631aa337ab"
-  integrity sha512-zeewNXqLjWJvMvAiqChbjrmhLefukRrDcrFOoKiYR+OT/EAPQL7QRZRWzuuGRLm0nYfh9TmqAfgjlW5u6ZgLsQ==
+"@cmdbrew/adminterface@0.1.0":
+  version "0.1.0"
+  resolved "https://npm.pkg.github.com/download/@cmdbrew/adminterface/0.1.0/6a803f7eefe7eb25f7f840f92e61b456ae3b77c01a231c3ec750c1abe467b92d#3fa617825a0eb0ca28ee89206d342483fd2d3849"
+  integrity sha512-SYtlgy1TbSGzF+qE7fLom5+5OMIzAKuJoRK3gPkHiXMHGJ8KD4uZropA4VkREe4z5NxTvhyQyD58UUjgAukUDQ==
   dependencies:
     "@popperjs/core" "^2.10.1"
     "@rails/actiontext" "^6.1.4"
@@ -895,6 +895,7 @@
     sortablejs "^1.14.0"
     tom-select "^1.7.5"
     trix "^1.3.1"
+    uuid "^8.3.2"
 
 "@csstools/convert-colors@^1.4.0":
   version "1.4.0"
@@ -6856,6 +6857,11 @@ uuid@^3.4.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
   integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
+
+uuid@^8.3.2:
+  version "8.3.2"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
+  integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
 
 v8-compile-cache@^2.1.1:
   version "2.3.0"

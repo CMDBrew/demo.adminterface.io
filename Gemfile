@@ -27,7 +27,7 @@ gem "jbuilder", "~> 2.7"
 
 # Admin framework
 source "https://rubygems.pkg.github.com/cmdbrew" do
-  gem "adminterface", "0.1.0.rc1255857620"
+  gem "adminterface", "0.1.0"
 end
 
 gem "country_select"
