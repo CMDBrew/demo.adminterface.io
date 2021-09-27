@@ -1,10 +1,10 @@
 user_ids = User.pluck(:id)
 product_ids = Product.pluck(:id)
 
-300.times do
+35.times do
   user = User.find(user_ids.sample)
   order = FactoryBot.create(:order, user: user)
-  nb_items = rand(5..10)
+  nb_items = rand(2..5)
 
   nb_items.times do
     product = Product.find(product_ids.sample)
