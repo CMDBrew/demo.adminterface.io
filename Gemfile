@@ -26,9 +26,7 @@ gem "jbuilder", "~> 2.7"
 # gem 'bcrypt', '~> 3.1.7'
 
 # Admin framework
-source "https://rubygems.pkg.github.com/cmdbrew" do
-  gem "adminterface", "0.1.0"
-end
+gem "adminterface", "0.2.0"
 
 gem "country_select"
 
