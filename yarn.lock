@@ -880,10 +880,10 @@
     "@babel/helper-validator-identifier" "^7.14.9"
     to-fast-properties "^2.0.0"
 
-"@cmdbrew/adminterface@0.1.0":
-  version "0.1.0"
-  resolved "https://npm.pkg.github.com/download/@cmdbrew/adminterface/0.1.0/6a803f7eefe7eb25f7f840f92e61b456ae3b77c01a231c3ec750c1abe467b92d#3fa617825a0eb0ca28ee89206d342483fd2d3849"
-  integrity sha512-SYtlgy1TbSGzF+qE7fLom5+5OMIzAKuJoRK3gPkHiXMHGJ8KD4uZropA4VkREe4z5NxTvhyQyD58UUjgAukUDQ==
+"@cmdbrew/adminterface@0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@cmdbrew/adminterface/-/adminterface-0.2.0.tgz#8fb2ff29361eb9e21e46087b3dbbb0211d638463"
+  integrity sha512-HDdECBTS/VwzXnvbG+xOZQ5jaYPtqesDgM2fq8E0FrdsIMUPnmsBHUIFydAFcL1eIR/fiwtUTQtxSkbS14yVXw==
   dependencies:
     "@popperjs/core" "^2.10.1"
     "@rails/actiontext" "^6.1.4"
