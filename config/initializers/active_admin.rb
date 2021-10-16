@@ -239,11 +239,11 @@ ActiveAdmin.setup do |config|
   config.namespace :admin do |admin|
     admin.build_menu :utility_navigation do |menu|
       menu.add priority: 1, label: "Docs",
-        url: "https://cmdbrew.github.io/adminterface/",
+        url: "https://adminterface.io",
         html_options: {target: :blank, rel: "noopener noreferrer"}
 
       menu.add priority: 2, label: "Github",
-        icon: "bi-github", url: "https://github.com/CMDBrew/adminterface",
+        icon: "bi-github", url: "https://github.com/CMDBrew/demo.adminterface.io",
         html_options: {target: :blank, rel: "noopener noreferrer"}
     end
   end
