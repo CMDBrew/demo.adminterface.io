@@ -1,7 +1,7 @@
 # Adminterface Demo
 [![CI](https://github.com/CMDBrew/demo.adminterface.io/actions/workflows/ci.yml/badge.svg)](https://github.com/CMDBrew/demo.adminterface.io/actions/workflows/ci.yml)
 
-This is the demo application for Adminterface. https://demo.adminterface.io. Check our [website](https://cmdbrew.github.io/adminterface) to find in-depth documentation for everything that Adminterface offers.
+This is the demo application for the Adminterface gem— https://github.com/CMDBrew/adminterface. Check our [website](https://cmdbrew.github.io/adminterface) to find in-depth documentation for everything that Adminterface offers.
 
 [![](preview.jpg)](https://cmdbrew.github.io/adminterface)
 
