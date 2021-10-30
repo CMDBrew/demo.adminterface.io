@@ -75,7 +75,7 @@ GEM
       zeitwerk (~> 2.3)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
-    adminterface (0.2.0)
+    adminterface (0.2.1)
       activeadmin (~> 2.9)
       httparty (>= 0.18)
       image_processing (~> 1.0)
@@ -423,7 +423,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  adminterface (= 0.2.0)
+  adminterface (= 0.2.1)
   aws-sdk-s3
   bootsnap (>= 1.4.4)
   byebug
