@@ -26,7 +26,7 @@ gem "jbuilder", "~> 2.7"
 # gem 'bcrypt', '~> 3.1.7'
 
 # Admin framework
-gem "adminterface", "0.2.1"
+gem "adminterface", "0.2.2"
 
 gem "country_select"
 
